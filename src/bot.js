@@ -12,6 +12,8 @@ import {
   DataLoader,
   SBotClient,
   Response,
+  sLogger,
+  Console,
 } from "s-bot-framework";
 
 const client = new SBotClient();
@@ -22,7 +24,7 @@ client.useResponse(
   new Response({
     trigger: { keywords },
     response: {
-      loader: new ComputedLoader(() => "-15 Social Credit"),
+      loader: new ComputedLoader(() => "-50 Social Credit"),
       reply: true,
     },
   })
@@ -32,3 +34,9 @@ client.useComputedActivity({
   type: "LISTENING",
   name: `CCP Anthem ${process.env.npm_package_version}`,
 });
+
+const ctrlConsole = new Console(client);
+ctrlConsole.addLoader(keywords);
+client.useConsole(ctrlConsole);
+
+sLogger.log("✨✨ Async Setup Done!", "SUCCESS");
