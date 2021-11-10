@@ -1,0 +1,25 @@
+{
+  "name": "zhong-xina",
+  "version": "1.0.0",
+  "description": "天上太阳红呀红彤彤哎 心中的太阳是毛泽东哎",
+  "main": "bot.js",
+  "type": "module",
+  "author": "Leomotors",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "yarn inc && yarn start",
+    "inc": "node node_modules/leomotors-automation/incrementVersion.js",
+    "review": "node ./scripts/reviewTrain.js",
+    "start": "node --es-module-specifier-resolution=node src/bot.js"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "leomotors-automation": "^1.0.1",
+    "s-bot-framework": "^1.0.200-pre"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CarelessDev/Zhong-Xinaa.git"
+  }
+}
